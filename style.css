@@ -1,0 +1,1026 @@
+/* =========================================================
+   PORTFOLIO CSS
+   - Desktop / Tablet / Mobile responsive
+   - 기존 HTML 구조 그대로 사용
+   - 중복/충돌 스타일 정리
+   ========================================================= */
+
+/* =========================
+   0. RESET / BASE
+   ========================= */
+
+@font-face {
+    font-family: "Exmouth";
+    src: url("font/EXMOUTH.TTF") format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "ImpactCustom";
+    src: url("font/IMPACT.TTF") format("truetype");
+    font-display: swap;
+}
+
+:root {
+    --max-width: 1300px;
+    --page-padding: 24px;
+    --mobile-padding: 16px;
+    --section-gap: clamp(8rem, 8vw, 8rem);
+    --detail-gap: clamp(2.5rem, 6vw, 4rem);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    color: #000;
+    background: #fff;
+    font-size: 1rem;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+img,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+a {
+    color: inherit;
+}
+
+.impact-font {
+    font-family: "ImpactCustom", Impact, sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.exmouth-text {
+    font-family: "Exmouth", cursive;
+    font-size: clamp(3.5rem, 7vw, 5.5rem);
+    font-weight: 500;
+    line-height: 0.95;
+}
+
+
+/* =========================
+   1. COMMON CONTAINER
+   ========================= */
+
+.container {
+    width: min(100%, var(--max-width));
+    margin: 0 auto;
+    padding: 20px var(--page-padding) 0;
+}
+
+
+/* =========================
+   2. VIEW
+   ========================= */
+
+.view {
+    width: 100%;
+}
+
+#main-view {
+    min-height: 100vh;
+}
+
+#main-view .container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================
+   3. HEADER
+   ========================= */
+
+.header {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.profile-info {
+    min-width: 0;
+}
+
+.profile-info h1 {
+    font-size: 2rem;
+    line-height: 1;
+    letter-spacing: 1.2px;
+    margin-bottom: 0.35rem;
+    font-weight: 500;
+}
+
+.profile-info p {
+    font-size: 1.1rem;
+    line-height: 1.2;
+}
+
+.contact-info {
+    flex: 0 1 auto;
+    min-width: 0;
+    line-height: 1.2;
+    text-align: right;
+}
+
+.contact-info span {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.contact-info a {
+    display: block;
+    max-width: 100%;
+    font-size: 0.875rem;
+    color: #666;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================
+   4. MAIN / PERSONAL WORK
+   ========================= */
+
+.content-body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2.5rem 0;
+}
+
+.work-item {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    min-width: 0;
+}
+
+.thumbnail-wrapper {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+}
+
+.thumbnail-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.thumbnail-wrapper img:hover {
+    transform: scale(1.03);
+}
+
+.work-title {
+    flex: 0 0 auto;
+    font-style: italic;
+    font-weight: normal;
+}
+
+.sub-text-absolute {
+    position: absolute;
+    right: -180px;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: right;
+}
+
+.sub-title {
+    font-size: 2rem;
+    line-height: 1.1;
+}
+
+.sub-year {
+    margin-top: 0.2rem;
+    font-size: 0.875rem;
+}
+
+
+/* =========================
+   5. PORTFOLIO SECTIONS
+   ========================= */
+
+.portfolio-section {
+    width: 100%;
+    margin-top: var(--section-gap);
+}
+
+.section-title {
+    font-style: italic;
+    font-weight: normal;
+    color: #000;
+    margin-bottom: 3rem;
+}
+
+/* 오른쪽 정렬 이미지 */
+.align-right-section {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.image-container-right,
+.image-container-left {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+}
+
+.image-container-right {
+    max-width: 800px;
+}
+
+.image-container-left {
+    max-width: 600px;
+}
+
+.sub-text-absolute-left {
+    position: absolute;
+    right: 100%;
+    bottom: 0;
+    padding-right: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.sub-text-absolute-right {
+    position: absolute;
+    left: 100%;
+    bottom: 0;
+    padding-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.align-left-section {
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+/* =========================
+   6. COMMERCIAL GALLERY
+   ========================= */
+
+.commercial-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.gallery-row-3,
+.gallery-row-2 {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.gallery-row-3 img,
+.gallery-row-2 img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.gallery-row-3 img {
+    width: calc((100% - 1rem) / 3);
+}
+
+.gallery-row-2 img {
+    width: calc((100% - 0.5rem) / 2);
+}
+
+
+/* =========================
+   7. TEXT / IMAGE HELPERS
+   ========================= */
+
+.center-image-wrapper {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.center-image-wrapper img {
+    width: 100%;
+    height: auto;
+}
+
+.info-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    font-weight: 500;
+}
+
+.info-text span {
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+}
+
+.mt-2 {
+    margin-top: 1rem;
+}
+
+.mt-5 {
+    margin-top: 3rem;
+}
+
+
+/* =========================
+   8. DETAIL PAGE
+   ========================= */
+
+#detail-view,
+#detail-view-2,
+#detail-view-3 {
+    width: 100%;
+}
+
+#detail-view .container,
+#detail-view-2 .container,
+#detail-view-3 .container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.back-btn-area {
+    margin: 2rem 0;
+}
+
+.back-btn {
+    padding: 0.5rem 0;
+    border: 0;
+    background: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.detail-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--detail-gap);
+    margin-bottom: 5rem;
+}
+
+.text-image-split {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: clamp(2rem, 5vw, 2rem);
+}
+
+.detail-text {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.detail-text .detail-desc {
+    margin-top: 20px;
+    word-spacing: -2.5px;
+}
+
+.detail-text h2 {
+    line-height: 1.2;
+}
+
+.detail-title {
+    font-size: clamp(2.2rem, 4vw, 3rem);
+}
+
+.detail-desc {
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    word-break: keep-all;
+}
+
+.detail-desc-en {
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.detail-text h1 {
+    font-size: 1rem;
+}
+
+.detail-text span.impact-font {
+    font-size: 1rem;
+}
+
+.detail-image {
+    flex: 0 1 600px;
+    width: 100%;
+    min-width: 0;
+}
+
+.detail-image img {
+    width: 100%;
+    height: auto;
+}
+
+/* 사진 왼쪽 / 텍스트 오른쪽 */
+.text-image-split.image-left {
+    flex-direction: row-reverse;
+}
+
+.text-image-split.image-left .detail-text {
+    text-align: left;
+}
+
+
+/* =========================
+   9. SINGLE IMAGE
+   ========================= */
+
+.just-image {
+    width: 100%;
+    max-width: 800px;
+}
+
+.just-image img {
+    width: 100%;
+    height: auto;
+}
+
+.just-image.align-left {
+    margin-right: auto;
+    margin-left: 0;
+}
+
+.just-image.align-right {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.just-image.align-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.just-image.align-full {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.just-image.align-full img {
+    width: 100%;
+}
+
+
+/* =========================
+   10. VIDEO
+   ========================= */
+
+.detail-module video {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin: 0 auto;
+    background: #000;
+}
+
+.detail-module.just-video {
+    width: 100%;
+}
+
+.detail-module.just-video video {
+    max-width: 100%;
+    width: 100%;
+}
+
+.detail-module.shot video {
+    max-width: 500px;
+}
+
+/* 기존 HTML에서 video를 align-full과 함께 사용할 경우 */
+.just-image.align-full video {
+    max-width: 100%;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #000;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.shorts-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+    background: #000;
+}
+
+.shorts-wrapper iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+
+/* =========================
+   11. FOOTER
+   ========================= */
+
+.footer {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+    margin: 5rem 0;
+    padding-top: 5rem;
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100vw;
+    border-top: 1px solid #000;
+    transform: translateX(-50%);
+}
+
+.footer-left,
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.footer a,
+.footer p,
+.footer span {
+    font-size: 1.5rem;
+    color: #888;
+    text-decoration: none;
+    font-style: italic;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* ================= 모바일 TOP SCROLL ================= */
+
+#topScrollBtn {
+    display: none;
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+
+    width: 30px;
+    height: 30px;
+
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+
+    background-color: #888;
+    color: #fff;
+
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+
+    cursor: pointer;
+    z-index: 9999;
+
+    align-items: center;
+    justify-content: center;
+}
+
+/* 모바일에서만 표시 */
+@media (max-width: 768px) {
+
+    #topScrollBtn {
+        display: flex;
+    }
+
+}
+
+/* PC에서는 완전히 숨김 */
+@media (min-width: 769px) {
+
+    #topScrollBtn {
+        display: none !important;
+    }
+
+}
+
+/* =========================================================
+   12. TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+    :root {
+        --page-padding: 20px;
+    }
+
+    .work-item {
+        gap: 1.5rem;
+    }
+
+    .sub-text-absolute {
+        right: -120px;
+    }
+
+    .sub-text-absolute-left {
+        padding-right: 1rem;
+    }
+
+    .sub-text-absolute-right {
+        padding-left: 1rem;
+    }
+
+    .text-image-split {
+        gap: 2rem;
+    }
+
+    .detail-image {
+        flex-basis: 48%;
+    }
+}
+
+
+/* =========================================================
+   13. MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    :root {
+        --mobile-padding: 16px;
+        --section-gap: 2rem;
+        --detail-gap: 2rem;
+    }
+
+    /* 화면 양옆에 안전한 여백 */
+    .container {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 16px var(--mobile-padding) 0;
+    }
+
+    /* 헤더 */
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+    }
+    .header .contact-info {
+        display: none;
+    }
+    .portfolio-section {
+        margin-top: 2rem;
+    }
+    .profile-info h1 {
+        font-size: clamp(1.6rem, 7vw, 2rem);
+    }
+
+    .profile-info p {
+        font-size: 1rem;
+    }
+
+    .contact-info {
+        width: 100%;
+        text-align: left;
+    }
+
+    .contact-info a {
+        overflow-wrap: anywhere;
+    }
+    
+    /* 메인 */
+    .content-body {
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin: 2rem 0 0 0;
+    }
+
+    .work-item {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .image-container {
+        width: 100%;
+        max-width: none;
+    }
+
+    .thumbnail-wrapper {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+    }
+
+    .work-title {
+        font-size: 2rem;
+    }
+    .section-title {
+        margin-bottom: 1.5rem;
+    }
+    /* 이미지 옆으로 빠져 있던 텍스트를 모바일에서는 아래로 */
+    .sub-text-absolute,
+    .sub-text-absolute-left,
+    .sub-text-absolute-right {
+        position: static;
+        display: flex;
+        margin-top: 0.75rem;
+        padding: 0;
+        text-align: left;
+        align-items: flex-start;
+        white-space: normal;
+    }
+
+    .sub-text-absolute .sub-title,
+    .sub-text-absolute-left .sub-title,
+    .sub-text-absolute-right .sub-title {
+        font-size: 1.8rem;
+    }
+    .sub-text-absolute-right {
+
+    }
+    .sub-title {
+        font-size: 1.5rem;
+    }
+    /* 두 번째 메인 이미지 */
+    .align-right-section,
+    .align-left-section {
+        display: block;
+    }
+
+    .image-container-right,
+    .image-container-left {
+        width: 100%;
+        max-width: none;
+    }
+
+    .sub-text-absolute-right span {
+        font-size: 1.2rem;
+    }
+    /* 상업 작업 갤러리 */
+    .gallery-row-3,
+    .gallery-row-2 {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .gallery-row-3 img,
+    .gallery-row-2 img {
+        width: 100%;
+    }
+
+    /* 상세 */
+    .back-btn-area {
+        margin: 0.5rem;
+    }
+
+    .detail-content {
+        gap: var(--detail-gap);
+        margin-bottom: 1rem;
+    }
+
+    .text-image-split,
+    .text-image-split.image-left {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+    .text-image-split.reverse {
+        flex-direction: column-reverse;
+    }
+
+    /* image-left는 모바일에서 이미지가 먼저 */
+    .text-image-split.image-left .detail-image {
+        order: -1;
+    }
+
+    .detail-text,
+    .detail-image {
+        width: 100%;
+        max-width: none;
+        flex-basis: auto;
+    }
+    .detail-desc {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+    .detail-text {
+        margin-bottom: 3rem;
+    }
+
+    .detail-desc-en {
+        font-size: 0.8rem;
+    }
+    .detail-text .detail-desc {
+        margin-top: 10px;
+    }
+    .detail-desc {
+        margin-bottom: 10px;
+    }
+    .just-image,
+    .just-image.align-left,
+    .just-image.align-right,
+    .just-image.align-center,
+    .just-image.align-full {
+        width: 100%;
+        max-width: none;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .detail-module video,
+    .detail-module.just-video video,
+    .detail-module.shot video {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* 푸터 */
+    .footer {
+        flex-direction: column;
+        margin: 2rem 0;
+        gap: 1rem;
+        margin-top: 2rem;
+        padding-top: 2rem;
+    }
+
+    .footer-left,
+    .footer-right {
+        flex: 0 0 auto;
+    }
+
+    .footer-right {
+        text-align: right;
+    }
+
+    
+    .footer-left a,
+    .footer-left p,
+    .footer-right a,
+    .footer-right p {
+        font-size: 0.8rem;
+    }  
+    span.footer-title {
+        font-size: 0.8rem;
+    }
+
+    /* Personal Works 제목을 thumbnail 위로 */
+    .work-item {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .work-item .section-title {
+        order: 1;
+        width: 100%;
+    }
+
+    .work-item .image-container {
+        order: 2;
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   14. VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 450px) {
+
+    :root {
+    --mobile-padding: 8px;
+    --section-gap: 1rem;
+    --detail-gap: 1rem;
+    }
+
+    .container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .profile-info h1 {
+        font-size: 1.5rem;
+    }
+
+    .profile-info p {
+        font-size: 0.9rem;
+    }
+
+    .sub-text-absolute .sub-title,
+    .sub-text-absolute-left .sub-title,
+    .sub-text-absolute-right .sub-title,
+    .sub-text-absolute-right span {
+        font-size: 1.5rem;
+    }
+    .sub-text-absolute-right span {
+        font-size: 0.875rem;
+    }   
+    .sub-text-absolute-right {
+        left: -20px;
+        bottom: -120px;
+    }
+    .work-title {
+        font-size: 1.7rem;
+    }
+
+    .detail-title {
+        font-size: 1.5rem;
+    }
+
+    .detail-desc,
+    .detail-desc-en {
+        word-break: keep-all;
+    }
+    .footer {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        gap: 0.5rem;
+    }
+}
+
+
+/* =========================================================
+   15. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .thumbnail-wrapper img {
+        transition: none;
+    }
+}

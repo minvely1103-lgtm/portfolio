@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <!--  메인 페이지 -->
+    <main id="main-view" class="view active">
+        <!-- 상단 헤더 영역 -->
+        <div class="container">
+            <header class="header">
+                <div class="profile-info">
+                    <h1 class="impact-font">MIN SUNYOUNG</h1>
+                    <p>Visual Directing<br>Photo Videographer</p>
+                </div>
+                <div class="contact-info">
+                    <span>Contact</span>
+                    <a href="mailto:minsunnyung@gmail.com">minsunnyung@gmail.com</a>
+                </div>
+            </header>
+
+            <!-- 메인 콘텐츠 영역 (클릭 시 2Depth로 이동) -->
+           <section class="content-body">
+                <div class="work-item">
+                    <!-- 왼쪽 영역: 사진 + 사진 오른쪽 아래에 띄울 텍스트 박스 -->
+                    <div class="image-container">
+                        <div class="thumbnail-wrapper">
+                            <img src="images/1.jpg" alt="Personal Works Thumbnail" onclick="switchView('detail-view')">
+                        </div>
+                        <div class="sub-text-absolute">
+                            <span class="impact-font impact-font sub-title">SILHOUETTE</span>
+                            <span class="sub-year">2026</span>
+                        </div>
+                    </div>
+
+                    <h2 class="exmouth-text section-title">Personal Works</h2>
+                </div>
+            </section>
+          
+            <section class="portfolio-section align-right-section">
+                <div class="image-container-right">
+                    <div class="thumbnail-wrapper">
+                        <img src="images/2.jpg" alt="Reflection Man" onclick="switchView('detail-view-2')">
+                    </div>
+                    
+                    <div class="sub-text-absolute-left">
+                        <span class="impact-font impact-font sub-title">REFLECTION</span>
+                        <span class="sub-year">2026</span>
+                    </div>
+                </div>
+            </section>
+            <!-- ================= 1. Commercial Works (3단 그리드) ================= -->
+            <section class="portfolio-section">
+                <h2 class="exmouth-text section-title">Commercial Works</h2>
+                
+                <!-- 5장 이미지 묶음 영역 -->
+                <div class="commercial-gallery">
+                    <!-- 윗줄: 3장 배치 -->
+                    <div class="gallery-row-3">
+                        <img src="images/3.jpg" alt="Commercial 1">
+                        <img src="images/4.jpg" alt="Commercial 2">
+                        <img src="images/5.jpg" alt="Commercial 3">
+                    </div>
+                    
+                    <!-- 아랫줄: 2장 배치 -->
+                    <div class="gallery-row-2">
+                        <img src="images/6.jpg" alt="Commercial 4">
+                        <img src="images/7.jpg" alt="Commercial 5">
+                    </div>
+                </div>
+
+                <div class="info-text align-left mt-2">
+                    <h1 class="impact-font sub-title">OURPIERRE</h1>
+                    <span class="sub-year">2026</span>
+                </div>
+            </section>
+
+            <!-- ================= 2. Twist Exhibition (텍스트 대각선 배치) ================= -->
+            <section class="portfolio-section align-left-section">
+                <!-- 기준점이 될 이미지 컨테이너 -->
+                <div class="image-container">
+                    <div class="thumbnail-wrapper">
+                        <img src="images/8.jpg" alt="Twist Exhibition" onclick="switchView('detail-view-3')">
+                    </div>
+                    
+                    <!-- 🌟 사진의 "오른쪽 아래 바깥"에 고정될 서브 텍스트 -->
+                    <div class="sub-text-absolute-right">
+                        <span class="impact-font sub-title">OURPIERRE<br>TWIST EXHIBITION</span>
+                        <span class="sub-year">2026</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= 3. Motion Works (유튜브 영상) ================= -->
+            <section class="portfolio-section">
+                <h2 class="exmouth-text section-title">Motion Works</h2>
+                
+                <!-- 16:9 비율 유지 유튜브 컨테이너 -->
+                <div class="detail-module just-video align-center">
+                    <!-- src 안의 주소를 본인의 유튜브 임베드 주소로 바꾸세요 -->
+                    <video controls playsinline>
+                        <!-- 영상 파일 경로를 src에 적어주세요 -->
+                        <source src="images/Showreel.mp4" type="video/mp4">
+                        해당 브라우저에서는 동영상을 지원하지 않습니다.
+                    </video>
+                </div>
+                
+                <!-- 영상 좌측 하단 텍스트 -->
+                <div class="info-text align-left mt-2">
+                    <h1 class="impact-font sub-title">PERSONAL MOTION WORKS</h1>
+                    <span class="sub-year">2026</span>
+                </div>
+            </section>
+            <footer class="footer">
+                <div class="footer-left">
+                    <a href="mailto:minsunnyung@gmail.com">minsunnyung@gmail.com</a>
+                    <p>010.3471.6871</p>
+                </div>
+                <div class="footer-right">
+                    <span class="footer-title">Instagram</span>
+                    <a href="https://instagram.com/mlnsunnyung" target="_blank">@mlnsunnyung</a>
+                </div>
+            </footer>
+        </div>
+
+    </main>
+
+<!-- ================= 첫 번째: 상세 페이지 ================= -->
+    <article id="detail-view" class="view" style="display: none;">
+        <div class="container">
+            
+            <!-- 1. 상단 헤더 (메인 페이지와 동일한 텍스트) -->
+            <header class="header">
+                <div class="profile-info">
+                    <h1 class="impact-font">MIN SUNYOUNG</h1>
+                    <p>Visual Directing<br>Photo Videographer</p>
+                </div>
+                <div class="contact-info">
+                    <span>Contact</span>
+                    <a href="mailto:minsunnyung@gmail.com">minsunnyung@gmail.com</a>
+                </div>
+            </header>
+
+            <!-- 뒤로가기 버튼 -->
+            <div class="back-btn-area">
+                <!-- switchView('main') 함수로 다시 메인 화면으로 돌아갑니다 -->
+                <!-- 모든 상세 페이지의 BACK 버튼 -->
+                <button type="button" class="back-btn" onclick="switchView('main-view')">&larr; BACK</button>
+            </div>
+
+            <!-- 2. 상세 콘텐츠 갤러리 영역 -->
+            <section class="detail-content">
+                
+                <!-- ================= [모듈 1] 텍스트(좌) + 이미지(우) ================= -->
+                <!-- 클래스에 text-image-split이 들어가면 무조건 가로(row)로 배치됩니다 -->
+                <div class="detail-module text-image-split reverse">
+                    <!-- 좌측 텍스트 영역 -->
+                    <div class="detail-text">
+                        <h2 class="impact-font detail-title">SILHOUETTE</h2>
+                        <p class="detail-desc">
+                            형태와 질감, 그리고 정적인 긴장감<br>
+                            색을 비워낸 단순한 공간 속에서, 인간의 몸이 가진 본연의 선과 실루엣을<br>
+                            감각적으로 기록한 작업입니다.
+                        </p>
+                        <p class="detail-desc-en">
+                            An archival work capturing the inherent lines and raw energy of the<br>
+                            human body through a sensory lens, set within a stripped-down,<br>
+                            monotone space.
+                        </p>
+                    </div>
+                    <!-- 우측 사진 영역 -->
+                    <div class="detail-image">
+                        <img src="images/1.jpg" alt="Silhouette 1">
+                    </div>
+                </div>
+                
+                <!-- ================= [모듈 2] 사진만 단독 추가 (왼쪽 정렬) ================= -->
+                <!-- 클래스에 align-left를 주면 사진이 왼쪽으로 붙습니다 -->
+                <div class="detail-module just-image align-left">
+                    <img src="images/실루엣1.jpg" alt="Silhouette 2">
+                </div>
+                
+                <!-- ================= [모듈 3] 사진만 단독 추가 (오른쪽 정렬) ================= -->
+                <!-- 클래스에 align-right를 주면 사진이 오른쪽으로 붙습니다 -->
+                <div class="detail-module just-image align-right">
+                    <img src="images/실루엣2.jpg" alt="Silhouette 3">
+                </div>
+                
+            </section>
+
+            <!-- 3. 상세 콘텐츠 갤러리 영역-->
+
+            <footer class="footer">
+                <div class="footer-left">
+                    <a href="mailto:minsunnyung@gmail.com">minsunnyung@gmail.com</a>
+                    <p>010.3471.6871</p>
+                </div>
+                <div class="footer-right">
+                    <span class="footer-title">Instagram</span>
+                    <a href="https://instagram.com/mlnsunnyung" target="_blank">@mlnsunnyung</a>
+                </div>
+            </footer>
+        </div>
+    </article>
+
+    <!-- ================= 두 번째 2Depth: REFLECTION 상세 페이지 ================= -->
+    <article id="detail-view-2" class="view" style="display: none;">
+        <div class="container">
+            
+            <!-- 1. 상단 헤더 (메인과 동일) -->
+            <header class="header">
+                <div class="profile-info">
+                    <h1 class="impact-font">MIN SUNYOUNG</h1>
+                    <p>Visual Directing<br>Photo Videographer</p>
+                </div>
+                <div class="contact-info">
+                    <span>Contact</span>
+                    <a href="mailto:minsunnyung@gmail.com">minsunnyung@gmail.com</a>
+                </div>
+            </header>
+
+            <!-- 뒤로가기 버튼 -->
+            <div class="back-btn-area">
+                <button type="button" class="back-btn" onclick="switchView('main-view')">&larr; BACK</button>
+            </div>
+
+            <!-- 2. 상세 콘텐츠 영역 -->
+            <section class="detail-content">
+                
+                <!-- ================= [모듈 1] 텍스트(우) + 이미지(좌) ================= -->
+                <div class="detail-module text-image-split image-left">
+                <!-- 텍스트 영역 -->
+                <div class="detail-text">
+                    <h2 class="impact-font detail-title">REFLECTION</h2>
+                    <p class="detail-desc">
+                        물과 유리잔을 통해 투영된 풍경 속에 담긴<br>
+                        인물의 고요하고 묘한 긴장감을 표현한 작업물입니다.
+                    </p>
+                    <p class="detail-desc-en">
+                        A work capturing the quiet, subtle tension of a figure through the<br>
+                        transparent refraction of water and glass.
+                    </p>
+                </div>
+                
+                <div class="detail-image">
+                    <!-- 실제 이미지 경로로 수정하세요 -->
+                    <img src="images/2.jpg" alt="Reflection 1">
+                </div>
+            </div>
+                
+                <!-- ================= [모듈 2] 단독 사진 (가운데 정렬) ================= -->
+                <!-- align-center 클래스를 추가하여 사진을 가운데로 보냅니다 -->
+                <div class="detail-module just-image image-left mt-5">
+                    <!-- 남자가 컵을 들여다보는 사진 -->
+                    <img src="images/리플렉션1.jpg" alt="Reflection 2">
+                </div>
+
+                <!-- ================= [모듈 3] 유튜브 쇼츠 (세로형) ================= -->
+                <div class="detail-module just-image shot align-right">
+                    <!-- 유튜브 쇼츠 영상을 넣는 컨테이너 -->
+                        <video controls playsinline>
+                        <!-- 영상 파일 경로를 src에 적어주세요 -->
+                        <source src="images/Reflection.MP4" type="video/mp4">
+                        해당 브라우저에서는 동영상을 지원하지 않습니다.
+                    </video>
+                </div>
+                
+            </section>
+
+            <!-- 푸터 영역 (여기에 메인의 푸터 코드를 복사하세요) -->
+            <footer class="footer">
+                <div class="footer-left">
+                    <a href="mailto:minsunnyung@gmail.com">minsunnyung@gmail.com</a>
+                    <p>010.3471.6871</p>
+                </div>
+                <div class="footer-right">
+                    <span class="footer-title">Instagram</span>
+                    <a href="https://instagram.com/mlnsunnyung" target="_blank">@mlnsunnyung</a>
+                </div>
+            </footer>
+
+        </div>
+    </article>
+
+    <!-- ================= 3번째 2Depth: TWIST EXHIBITION 상세 페이지 ================= -->
+    <article id="detail-view-3" class="view" style="display: none;">
+        <div class="container">
+            
+            <!-- 상단 헤더 -->
+            <header class="header">
+                <div class="profile-info">
+                    <h1 class="impact-font">MIN SUNYOUNG</h1>
+                    <p>Visual Directing<br>Photo Videographer</p>
+                </div>
+                <div class="contact-info">
+                    <span>Contact</span>
+                    <a href="mailto:minsunnyung@gmail.com">minsunnyung@gmail.com</a>
+                </div>
+            </header>
+
+            <!-- 뒤로가기 버튼 -->
+            <div class="back-btn-area">
+                <button type="button" class="back-btn" onclick="switchView('main-view')">&larr; BACK</button>
+            </div>
+
+            <section class="detail-content">
+                
+                <!-- [모듈 1] 텍스트(좌) + 이미지(우) -->
+                <div class="detail-module text-image-split reverse">
+                    <div class="detail-text">
+                        <h2 class="impact-font detail-title">OURPIERRE<br>TWIST EXHIBITION</h2>
+                        <p class="detail-desc">
+                            서로 다른 존재가 맞닿고, 밀어내고, 다시 연결되는 과정에서 발생하는<br>
+                            긴장과 친밀함, 거리와 연결에 주목합니다.<br>
+                            무용수들의 움직임은 서로 다른 두 카메라의 시선을 통해 기록됩니다.
+                        </p>
+                        <p class="detail-desc-en">
+                            The work focuses on the tension and intimacy, distance and connection<br>
+                            that emerge as different beings come into contact, push against one<br>
+                            another, and reconnect. The dancers' movements are captured through<br>
+                            the perspectives of two different cameras.
+                        </p>
+                        <p class="detail-desc-en" style="margin-top: 2rem;">
+                            <h1>video & still cuts by <span class="impact-font">MIN SUNYOUNG</span></h1>
+                        </p>
+                    </div>
+                    <div class="detail-image">
+                        <img src="images/8.jpg" alt="Twist Exhibition 1">
+                    </div>
+                </div>
+
+                <!-- [모듈 2] 가로형 유튜브 영상 1 -->
+                <div class="detail-module just-video align-center">
+                    <!-- 유튜브 소스 코드 입력 -->
+                    <video controls playsinline>
+                        <!-- 영상 파일 경로를 src에 적어주세요 -->
+                        <source src="images/Twist1.mp4" type="video/mp4">
+                        해당 브라우저에서는 동영상을 지원하지 않습니다.
+                    </video>
+                </div>
+
+                <!-- [모듈 3] 가로형 유튜브 영상 2 -->
+                <div class="detail-module just-video align-center">
+                    <!-- 유튜브 소스 코드 입력 -->
+                    <video controls playsinline>
+                        <!-- 영상 파일 경로를 src에 적어주세요 -->
+                        <source src="images/Twist2.mp4" type="video/mp4">
+                        해당 브라우저에서는 동영상을 지원하지 않습니다.
+                    </video>
+                </div>
+
+                <!-- [모듈 4] 단독 사진 (왼쪽 정렬) -->
+                <div class="detail-module just-image align-left">
+                    <img src="images/트위스트전시 (1).JPG" alt="Twist Exhibition 2">
+                </div>
+
+                <!-- [모듈 5] 단독 사진  -->
+                <div class="detail-module just-image align-full">
+                    <img src="images/트위스트전시 (3).JPG" alt="Twist Exhibition 3">
+                </div>
+
+                <!-- [모듈 5] 단독 사진 (오른쪽 정렬) -->
+                <div class="detail-module just-image align-right">
+                    <img src="images/트위스트전시 (5).JPG" alt="Twist Exhibition 3">
+                </div>
+
+
+            </section>
+
+            <!-- 푸터 -->
+            <footer class="footer">
+                <div class="footer-left">
+                    <a href="mailto:minsunnyung@gmail.com">minsunnyung@gmail.com</a>
+                    <p>010.3471.6871</p>
+                </div>
+                <div class="footer-right">
+                    <span class="footer-title">Instagram</span>
+                    <a href="https://instagram.com/mlnsunnyung" target="_blank">@mlnsunnyung</a>
+                </div>
+            </footer>
+
+        </div>
+    </article>
+
+        
+</body>
+    <!-- 모바일 TOP SCROLL 버튼 -->
+    <button type="button" id="topScrollBtn" aria-label="맨 위로 이동">
+        ↑
+    </button>
+
+<!-- 화면 전환 만능 스크립트 -->
+        <script>
+            // 화면 전환 함수
+            function switchView(targetId, pushHistory = true) {
+
+                // 모든 페이지 숨기기
+                const allViews = document.querySelectorAll('.view');
+
+                allViews.forEach(function(view) {
+                    view.style.display = 'none';
+                });
+
+                // 선택한 페이지만 표시
+                const targetView = document.getElementById(targetId);
+
+                if (targetView) {
+                    targetView.style.display = 'block';
+                }
+
+                // 브라우저 주소에 현재 페이지 기록
+                if (pushHistory) {
+                    history.pushState(
+                        { viewId: targetId },
+                        "",
+                        "#" + targetId
+                    );
+                }
+
+                // 화면 전환 시 맨 위로
+                window.scrollTo(0, 0);
+            }
+
+
+            // 브라우저 뒤로가기 / 앞으로가기
+            window.addEventListener('popstate', function(event) {
+
+                if (event.state && event.state.viewId) {
+
+                    switchView(event.state.viewId, false);
+
+                } else {
+
+                    switchView('main-view', false);
+
+                }
+
+            });
+
+
+            // 페이지 최초 로딩
+            document.addEventListener('DOMContentLoaded', function() {
+
+                // 현재 URL의 #값 가져오기
+                const hash = window.location.hash.replace('#', '');
+
+                // 예:
+                // portfolio.html#detail-view
+                // portfolio.html#detail-view-2
+                // portfolio.html#detail-view-3
+
+                if (hash && document.getElementById(hash)) {
+
+                    // hash가 있으면 해당 상세 페이지 열기
+                    switchView(hash, false);
+
+                } else {
+
+                    // hash가 없으면 메인 페이지
+                    switchView('main-view', false);
+
+                }
+
+            });
+
+
+            // URL의 #값이 변경될 경우
+            window.addEventListener('hashchange', function() {
+
+                const hash = window.location.hash.replace('#', '');
+
+                if (hash && document.getElementById(hash)) {
+
+                    switchView(hash, false);
+
+                } else {
+
+                    switchView('main-view', false);
+
+                }
+
+            });
+
+            // ================= 모바일 TOP SCROLL =================
+
+            const topScrollBtn = document.getElementById('topScrollBtn');
+
+            window.addEventListener('scroll', function() {
+
+                if (window.innerWidth <= 768 && window.scrollY > 300) {
+                    topScrollBtn.style.display = 'flex';
+                } else {
+                    topScrollBtn.style.display = 'none';
+                }
+
+            });
+
+            topScrollBtn.addEventListener('click', function() {
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+
+            });
+
+
+        </script>
+
+</html>
